@@ -22,8 +22,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   console.log(context)
+  const slug = context.params?.slug
   return {
-    props: { slug: context.params?.slug ? context.params.slug : '' },
+    props: { slug: slug ? slug : "" },
     revalidate: 60,
   };
 };
